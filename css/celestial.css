@@ -1,5 +1,11 @@
-/* Copyright 2015-16 Olaf Frohn https://github.com/ofrohn, see LICENSE */
+body {
+background: rgb(245,246,246);
+background: -moz-linear-gradient(top,  rgba(245,246,246,1) 0%, rgba(219,220,226,1) 21%, rgba(184,186,198,1) 49%, rgba(221,223,227,1) 80%, rgba(245,246,246,1) 100%);
+background: -webkit-linear-gradient(top,  rgba(245,246,246,1) 0%,rgba(219,220,226,1) 21%,rgba(184,186,198,1) 49%,rgba(221,223,227,1) 80%,rgba(245,246,246,1) 100%);
+background: linear-gradient(to bottom,  rgba(245,246,246,1) 0%,rgba(219,220,226,1) 21%,rgba(184,186,198,1) 49%,rgba(221,223,227,1) 80%,rgba(245,246,246,1) 100%); 
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f6f6', endColorstr='#f5f6f6',GradientType=0 ); /* IE6-9 */
 
+}
 #celestial-map { width: 45%; height: auto; margin: 0; padding: 0; display: inline-block; position: relative; }
 #celestial-map { width: 45%; height: auto; margin: 0; padding: 0; display: inline-block; position: relative; }
 #celestial-map canvas { display: inline-block; position:absolute; z-index:0; cursor:hand; cursor:grab; cursor:-moz-grab; cursor:-webkit-grab; }
