@@ -14,7 +14,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f6f6', end
 #d3-celestial-footer a { text-decoration:none; color:#99f; }
 
 /* Form */
-#celestial-form { font:12pt/1 'Arial Unicode MS', Arial, Helvetica, sans-serif; color: white; display: block; position: relative; float: right; margin-top: -500px; margin-right: 30px}
+#celestial-form { font:12pt/1 'Arial Unicode MS', Arial, Helvetica, sans-serif; display: block; position: relative; float: right; margin-top: -500px; margin-right: 30px}
 #error { position:absolute; min-width:100px; height:auto; padding: 2px 4px; color:#f00; background:#fff; border:2px solid #f00; border-radius:3px; font-weight:normal; display:block; top:-9999px; left:-9999px; opacity:0; transition:opacity 1s linear; }
 #celestial-form .col { border-top: 1px dotted #000; padding: 4px 6px; margin:0  4px; clear:both; }
 /* What parts to show */
