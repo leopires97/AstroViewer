@@ -2334,11 +2334,11 @@ function form(cfg) {
   //Map parameters    
   var col = frm.append("div").attr("class", "col").attr("id", "general");
   
-  col.append("label").attr("title", "Map width in pixel, 0 indicates full width").attr("for", "width").html("Width ");
+  col.append("label").attr("title", "Map width in pixel, 0 indicates full width").attr("for", "width").html("Largura ");
   col.append("input").attr("type", "number").attr("maxlength", "4").attr("max", "20000").attr("min", "0").attr("title", "Map width").attr("id", "width").attr("value", config.width).on("change", resize);
   col.append("span").html("px");
 
-  col.append("label").attr("title", "Map projection, (hemi) indicates hemispherical projection").attr("for", "projection").html("Projection");
+  col.append("label").attr("title", "Map projection, (hemi) indicates hemispherical projection").attr("for", "projection").html("Projecao");
   var sel = col.append("select").attr("id", "projection").on("change", reproject);
   var selected = 0;
   var list = Object.keys(prj).map( function (key, i) { 
@@ -2352,7 +2352,7 @@ function form(cfg) {
   sel.property("selectedIndex", selected);
   
   selected = 0;
-  col.append("label").attr("title", "Coordinate space in which the map is displayed").attr("for", "transform").html("Coordinates");
+  col.append("label").attr("title", "Coordinate space in which the map is displayed").attr("for", "transform").html("Coordenadas");
   sel = col.append("select").attr("id", "transform").on("change", reload);
   list = Object.keys(leo).map(function (key, i) {
     if (key === config.transform) selected = i;    
@@ -2364,7 +2364,7 @@ function form(cfg) {
   sel.property("selectedIndex", selected);
 
   col.append("br");
-  col.append("label").attr("title", "Center coordinates long/lat in selected coordinate space").attr("for", "centerx").html("Center");
+  col.append("label").attr("title", "Center coordinates long/lat in selected coordinate space").attr("for", "centerx").html("Centro");
   col.append("input").attr("type", "number").attr("id", "centerx").attr("title", "Center right ascension/longitude").attr("max", "24").attr("min", "0").attr("step", "0.1").on("change", turn);
   col.append("span").attr("id", "cxunit").html("h");
   //addList("centerx", "ra");
@@ -2376,10 +2376,10 @@ function form(cfg) {
   col.append("input").attr("type", "number").attr("id", "centerz").attr("title", "Center orientation").attr("max", "180").attr("min", "-180").attr("step", "0.1").on("change", turn);
   col.append("span").html("\u00b0");
 
-  col.append("label").attr("for", "orientationfixed").attr("class", "advanced").html("Fixed");
+  col.append("label").attr("for", "orientationfixed").attr("class", "advanced").html("Fixado");
   col.append("input").attr("type", "checkbox").attr("id", "orientationfixed").attr("class", "advanced").property("checked", config.orientationfixed).on("change", apply);    
 
-  col.append("label").attr("title", "Center and zoom in on this constellation").attr("for", "constellation").html("Show");
+  col.append("label").attr("title", "Center and zoom in on this constellation").attr("for", "constellation").html("Mostrar");
   col.append("select").attr("id", "constellation").on("change", showConstellation);
   
   setCenter(config.center, config.transform);
@@ -2387,16 +2387,16 @@ function form(cfg) {
   // Stars 
   col = frm.append("div").attr("class", "col").attr("id", "stars");
   
-  col.append("label").attr("class", "header").attr("for", "stars-show").html("Stars");
+  col.append("label").attr("class", "header").attr("for", "stars-show").html("Estrelas");
   col.append("input").attr("type", "checkbox").attr("id", "stars-show").property("checked", config.stars.show).on("change", apply);
   
-  col.append("label").attr("for", "stars-limit").html("down to magnitude");
+  col.append("label").attr("for", "stars-limit").html("ate magnitude");
   col.append("input").attr("type", "number").attr("id", "stars-limit").attr("title", "Star display limit (magnitude)").attr("value", config.stars.limit).attr("max", "6").attr("min", "-1").attr("step", "0.1").on("change", apply);
   
-  col.append("label").attr("for", "stars-colors").html("with spectral colors");
+  col.append("label").attr("for", "stars-colors").html("com cores espectrais");
   col.append("input").attr("type", "checkbox").attr("id", "stars-colors").property("checked", config.stars.colors).on("change", apply);
   
-  col.append("label").attr("for", "stars-color").html("or default color ");
+  col.append("label").attr("for", "stars-color").html("ou cor padrao ");
   col.append("input").attr("type", "color").attr("autocomplete", "off").attr("id", "stars-style-fill").attr("title", "Star color").property("value", config.stars.style.fill).on("change", apply);
 
   col.append("br");
@@ -2408,7 +2408,7 @@ function form(cfg) {
     var keys = Object.keys(names[fld]);
     if (keys.length > 1) {
       //Select List
-      col.append("label").attr("for", "stars-" + fld).html("Show");
+      col.append("label").attr("for", "stars-" + fld).html("Mostrar");
       
       selected = 0;
       col.append("label").attr("title", "Type of star name").attr("for", "stars-" + fld + "Type").html("");
@@ -2428,14 +2428,14 @@ function form(cfg) {
     col.append("label").attr("for", "stars-" + fld).html(" " + names[fld][keys[0]]);
       col.append("input").attr("type", "checkbox").attr("id", "stars-" + fld).property("checked", config.stars[fld]).on("change", apply);
     }    
-    col.append("label").attr("for", "stars-" + fld + "Limit").html("down to mag");
+    col.append("label").attr("for", "stars-" + fld + "Limit").html("ate mag");
     col.append("input").attr("type", "number").attr("id", "stars-" + fld + "Limit").attr("title", "Star name display limit (magnitude)").attr("value", config.stars[fld + "Limit"]).attr("max", "6").attr("min", "-1").attr("step", "0.1").on("change", apply);
   
   }
 
   col.append("br");
 
-  col.append("label").attr("for", "stars-size").attr("class", "advanced").html("Stellar disk size: base");
+  col.append("label").attr("for", "stars-size").attr("class", "advanced").html("Tamanho disco estelar: base");
   col.append("input").attr("type", "number").attr("id", "stars-size").attr("class", "advanced").attr("title", "Size of the displayed star disk; base").attr("value", config.stars.size).attr("max", "100").attr("min", "0").attr("step", "0.1").on("change", apply);
 
   col.append("label").attr("for", "stars-exponent").attr("class", "advanced").html(" * e ^ (exponent");
@@ -2450,14 +2450,14 @@ function form(cfg) {
   col.append("label").attr("class", "header").attr("title", "Deep Space Objects").attr("for", "dsos-show").html("DSOs");
   col.append("input").attr("type", "checkbox").attr("id", "dsos-show").property("checked", config.dsos.show).on("change", apply);
   
-  col.append("label").attr("for", "dsos-limit").html("down to mag");
+  col.append("label").attr("for", "dsos-limit").html("ate mag");
   col.append("input").attr("type", "number").attr("id", "dsos-limit").attr("title", "DSO display limit (magnitude)").attr("value", config.dsos.limit).attr("max", "6").attr("min", "0").attr("step", "0.1").on("change", apply);
 
 
-  col.append("label").attr("for", "dsos-colors").html("with symbol colors");
+  col.append("label").attr("for", "dsos-colors").html("com simbolo de cor");
   col.append("input").attr("type", "checkbox").attr("id", "dsos-colors").property("checked", config.dsos.colors).on("change", apply);
   
-  col.append("label").attr("for", "dsos-color").html("or default color ");
+  col.append("label").attr("for", "dsos-color").html("ou cor padrao ");
   col.append("input").attr("type", "color").attr("autocomplete", "off").attr("id", "dsos-style-fill").attr("title", "DSO color").property("value", config.dsos.style.fill).on("change", apply);
 
   col.append("br");
@@ -2470,7 +2470,7 @@ function form(cfg) {
   for (fld in names) {
     if (!has(names, fld)) continue;
     var dsoKeys = Object.keys(names[fld]);
-    col.append("label").attr("for", "dsos-" + fld).html("Show");
+    col.append("label").attr("for", "dsos-" + fld).html("Mostrar");
       
     selected = 0;
     col.append("label").attr("title", "Type of DSO name").attr("for", "dsos-" + fld + "Type").attr("class", "advanced").html("");
@@ -2484,18 +2484,18 @@ function form(cfg) {
        .text(function (d) { return d.n; });
     sel.property("selectedIndex", selected);
 
-    col.append("label").attr("for", "dsos-" + fld).html("names");
+    col.append("label").attr("for", "dsos-" + fld).html("nomes");
     col.append("input").attr("type", "checkbox").attr("id", "dsos-" + fld).property("checked", config.dsos[fld]).on("change", apply);
   }    
   
 //  col.append("label").attr("for", "dsos-desig").html("or designations");
 //  col.append("input").attr("type", "checkbox").attr("id", "dsos-desig").property("checked", config.dsos.desig).on("change", apply);
   
-  col.append("label").attr("for", "dsos-nameLimit").html("down to mag");
+  col.append("label").attr("for", "dsos-nameLimit").html("Ate mag");
   col.append("input").attr("type", "number").attr("id", "dsos-nameLimit").attr("title", "DSO name display limit (magnitude)").attr("value", config.dsos.nameLimit).attr("max", "6").attr("min", "0").attr("step", "0.1").on("change", apply);
   col.append("br");
 
-  col.append("label").attr("for", "dsos-size").attr("class", "advanced").html("DSO symbol size: (base");
+  col.append("label").attr("for", "dsos-size").attr("class", "advanced").html("tamanho do simbolo DSO: (base");
   col.append("input").attr("type", "number").attr("id", "dsos-size").attr("class", "advanced").attr("title", "Size of the displayed symbol: base").attr("value", config.dsos.size).attr("max", "100").attr("min", "0").attr("step", "0.1").on("change", apply);
 
   col.append("label").attr("for", "dsos-exponent").attr("class", "advanced").html(" * 2 [* adaptation] - magnitude) ^ exponent");
@@ -2505,7 +2505,7 @@ function form(cfg) {
 
   // Constellations 
   col = frm.append("div").attr("class", "col").attr("id", "constellations");
-  col.append("label").attr("class", "header").html("Constellations");
+  col.append("label").attr("class", "header").html("Constelacoes");
   //col.append("input").attr("type", "checkbox").attr("id", "constellations-show").property("checked", config.constellations.show).on("change", apply);
   
   
@@ -2516,7 +2516,7 @@ function form(cfg) {
     var nameKeys = Object.keys(names[fld]);
     if (nameKeys.length > 1) {
       //Select List
-      col.append("label").attr("for", "constellations-" + fld).html("Show");
+      col.append("label").attr("for", "constellations-" + fld).html("Mostrar");
       
       selected = 0;
       col.append("label").attr("title", "Language of constellation names").attr("for", "constellations-" + fld + "Type").attr("class", "advanced").html("");
@@ -2530,7 +2530,7 @@ function form(cfg) {
          .text(function (d) { return d.n; });
       sel.property("selectedIndex", selected);
 
-      col.append("label").attr("for", "constellations-" + fld).html("names");
+      col.append("label").attr("for", "constellations-" + fld).html("nomes");
       col.append("input").attr("type", "checkbox").attr("id", "constellations-" + fld).property("checked", config.constellations[fld]).on("change", apply);
     } else if (nameKeys.length === 1) {
       //Simple field
@@ -2546,62 +2546,62 @@ function form(cfg) {
   col.append("label").attr("for", "constellations-desig").html("abbreviated");
   col.append("input").attr("type", "checkbox").attr("id", "constellations-desig").property("checked", config.constellations.desig).on("change", apply);
   */
-  col.append("label").attr("for", "constellations-lines").html(" lines");
+  col.append("label").attr("for", "constellations-lines").html(" linhas");
   col.append("input").attr("type", "checkbox").attr("id", "constellations-lines").property("checked", config.constellations.lines).on("change", apply);
   
-  col.append("label").attr("for", "constellations-bounds").html(" boundaries");
+  col.append("label").attr("for", "constellations-bounds").html(" limites");
   col.append("input").attr("type", "checkbox").attr("id", "constellations-bounds").property("checked", config.constellations.bounds).on("change", apply);
 
   enable($("constellations-names"));
 
   // graticules & planes 
   col = frm.append("div").attr("class", "col").attr("id", "lines");
-  col.append("label").attr("class", "header").html("Lines");
+  col.append("label").attr("class", "header").html("Linhas");
   
-  col.append("label").attr("title", "Latitude/longitude grid lines").attr("for", "lines-graticule").html("Graticule");
+  col.append("label").attr("title", "Latitude/longitude grid lines").attr("for", "lines-graticule").html("Graticulas");
   col.append("input").attr("type", "checkbox").attr("id", "lines-graticule-show").property("checked", config.lines.graticule.show).on("change", apply);
   
-  col.append("label").attr("for", "lines-equatorial").html("Equator");
+  col.append("label").attr("for", "lines-equatorial").html("Equador");
   col.append("input").attr("type", "checkbox").attr("id", "lines-equatorial-show").property("checked", config.lines.equatorial.show).on("change", apply);
   
-  col.append("label").attr("for", "lines-ecliptic").html("Ecliptic");
+  col.append("label").attr("for", "lines-ecliptic").html("Ecliptico");
   col.append("input").attr("type", "checkbox").attr("id", "lines-ecliptic-show").property("checked", config.lines.ecliptic.show).on("change", apply);
   
-  col.append("label").attr("for", "lines-galactic").html("Galactic plane");
+  col.append("label").attr("for", "lines-galactic").html("Plano Galatico");
   col.append("input").attr("type", "checkbox").attr("id", "lines-galactic-show").property("checked", config.lines.galactic.show).on("change", apply);
   
-  col.append("label").attr("for", "lines-supergalactic").html("Supergalactic plane");
+  col.append("label").attr("for", "lines-supergalactic").html("Plano Supergalatico");
   col.append("input").attr("type", "checkbox").attr("id", "lines-supergalactic-show").property("checked", config.lines.supergalactic.show).on("change", apply);
 
   // Other
   col = frm.append("div").attr("class", "col").attr("id", "other");
-  col.append("label").attr("class", "header").html("Other");
+  col.append("label").attr("class", "header").html("Outro");
   
-  col.append("label").attr("for", "mw-show").html("Milky Way");
+  col.append("label").attr("for", "mw-show").html("Via Lactea");
   col.append("input").attr("type", "checkbox").attr("id", "mw-show").property("checked", config.mw.show).on("change", apply);
   
-  col.append("label").attr("for", "mw-style-fill").attr("class", "advanced").html(" color");
+  col.append("label").attr("for", "mw-style-fill").attr("class", "advanced").html(" cor");
   col.append("input").attr("type", "color").attr("id", "mw-style-fill").attr("class", "advanced").attr("title", "Milky Way color").attr("value", config.mw.style.fill).on("change", apply);
 
-  col.append("label").attr("for", "mw-style-opacity").attr("class", "advanced").html(" opacity");
+  col.append("label").attr("for", "mw-style-opacity").attr("class", "advanced").html(" opacidade");
   col.append("input").attr("type", "number").attr("id", "mw-style-opacity").attr("class", "advanced").attr("title", "Transparency of each Milky Way layer").attr("value", config.mw.style.opacity).attr("max", "1").attr("min", "0").attr("step", "0.01").on("change", apply);
   
-  col.append("label").attr("for", "advanced").html("Advanced options");
+  col.append("label").attr("for", "advanced").html("Opcoes avancadas");
   col.append("input").attr("type", "checkbox").attr("id", "advanced").property("checked", config.advanced).on("change", apply);
   
   col.append("br");
   
-  col.append("label").attr("for", "background").html("Background color");
+  col.append("label").attr("for", "background").html("Cor de fundo");
   col.append("input").attr("type", "color").attr("id", "background-fill").attr("title", "Background color").attr("value", config.background.fill).on("change", apply);
   
-  col.append("label").attr("title", "Star/DSO sizes are increased with higher zoom-levels").attr("for", "adaptable").attr("class", "advanced").html("Adaptable object sizes");
+  col.append("label").attr("title", "Star/DSO sizes are increased with higher zoom-levels").attr("for", "adaptable").attr("class", "advanced").html("Tamanhos adaptaveis de objetos");
   col.append("input").attr("type", "checkbox").attr("id", "adaptable").attr("class", "advanced").property("checked", config.adaptable).on("change", apply);
   
   // General language setting
   var langKeys = formats_all[config.culture];
 
   selected = 0;
-  col.append("label").attr("title", "General language setting").attr("for", "lang").html("Object names ");
+  col.append("label").attr("title", "General language setting").attr("for", "lang").html("Nome Objetos ");
   sel = col.append("select").attr("id", "lang").on("change", apply);
   list = langKeys.map(function (key, i) {
     if (key === config.lang) selected = i;    
@@ -2614,7 +2614,7 @@ function form(cfg) {
   sel.property("selectedIndex", selected);
    
   col = frm.append("div").attr("class", "col").attr("id", "download");
-  col.append("label").attr("class", "header").html("Download");
+  col.append("label").attr("class", "header").html("Baixar");
 
   col.append("input").attr("type", "button").attr("id", "download-png").attr("value", "PNG Image").on("click", function() {
     var a = d3.select("body").append("a").node(), 
@@ -3125,7 +3125,7 @@ function geo(cfg) {
   if (has(config, "geopos") && config.geopos !== null && config.geopos.length === 2) geopos = config.geopos;
   var col = frm.append("div").attr("class", "col").attr("id", "location").style("display", "none");
   //Latitude & longitude fields
-  col.append("label").attr("title", "Location coordinates long/lat").attr("for", "lat").html("Location");
+  col.append("label").attr("title", "Location coordinates long/lat").attr("for", "lat").html("Localização");
   col.append("input").attr("type", "number").attr("id", "lat").attr("title", "Latitude").attr("placeholder", "Latitude").attr("max", "90").attr("min", "-90").attr("step", "0.0001").attr("value", geopos[0]).on("change",  function () {
     if (testNumber(this) === true) go(); 
   });
@@ -3139,7 +3139,7 @@ function geo(cfg) {
     col.append("input").attr("type", "button").attr("value", "Here").attr("id", "here").on("click", here);
   }
   //Datetime field with dtpicker-button
-  col.append("label").attr("title", "Local date/time").attr("for", "datetime").html(" Date/time");
+  col.append("label").attr("title", "Local date/time").attr("for", "datetime").html(" Data e Hora");
   col.append("input").attr("type", "button").attr("id", "day-left").attr("title", "One day back").on("click", function () {
     date.setDate(date.getDate() - 1); 
     $("datetime").value = dateFormat(date, zone); 
@@ -3160,14 +3160,14 @@ function geo(cfg) {
   col.append("input").attr("type", "button").attr("value", "Now").attr("id", "now").on("click", now);
   //Horizon marker
   col.append("br");
-  col.append("label").attr("title", "Show horizon marker").attr("for", "horizon-show").html(" Horizon marker");
+  col.append("label").attr("title", "Show horizon marker").attr("for", "horizon-show").html(" Marcar Horizonte");
   col.append("input").attr("type", "checkbox").attr("id", "horizon-show").property("checked", config.horizon.show).on("change", apply);    
   //Daylight
   col.append("label").attr("title", "Show daylight").attr("for", "daylight-show").html("Daylight sky");
   col.append("input").attr("type", "checkbox").attr("id", "daylight-show").property("checked", config.daylight.show).on("change", apply);col.append("br");
     
   //Show planets
-  col.append("label").attr("title", "Show solar system objects").attr("for", "planets-show").html(" Planets, Sun & Moon");
+  col.append("label").attr("title", "Show solar system objects").attr("for", "planets-show").html(" Planetas, Sol e Lua");
   col.append("input").attr("type", "checkbox").attr("id", "planets-show").property("checked", config.planets.show).on("change", apply);    
   //Planet names
   var names = formats.planets[config.culture] || formats.planets.iau;
@@ -3194,7 +3194,7 @@ function geo(cfg) {
 
       if (fld === "names") {
         sel.attr("class", "advanced");
-        col.append("label").attr("for", "planets-" + fld).html("names");
+        col.append("label").attr("for", "planets-" + fld).html("Nomes");
         col.append("input").attr("type", "checkbox").attr("id", "planets-" + fld).property("checked", config.planets[fld]).on("change", apply);
       }
     } 
