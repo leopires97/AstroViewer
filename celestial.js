@@ -3125,7 +3125,7 @@ function geo(cfg) {
   if (has(config, "geopos") && config.geopos !== null && config.geopos.length === 2) geopos = config.geopos;
   var col = frm.append("div").attr("class", "col").attr("id", "location").style("display", "none");
   //Latitude & longitude fields
-  col.append("label").attr("title", "Location coordinates long/lat").attr("for", "lat").html("Localização");
+  col.append("label").attr("title", "Location coordinates long/lat").attr("for", "lat").html("Localizacao");
   col.append("input").attr("type", "number").attr("id", "lat").attr("title", "Latitude").attr("placeholder", "Latitude").attr("max", "90").attr("min", "-90").attr("step", "0.0001").attr("value", geopos[0]).on("change",  function () {
     if (testNumber(this) === true) go(); 
   });
@@ -3163,7 +3163,7 @@ function geo(cfg) {
   col.append("label").attr("title", "Show horizon marker").attr("for", "horizon-show").html(" Marcar Horizonte");
   col.append("input").attr("type", "checkbox").attr("id", "horizon-show").property("checked", config.horizon.show).on("change", apply);    
   //Daylight
-  col.append("label").attr("title", "Show daylight").attr("for", "daylight-show").html("Daylight sky");
+  col.append("label").attr("title", "Show daylight").attr("for", "daylight-show").html("Ceu Luz do Dia");
   col.append("input").attr("type", "checkbox").attr("id", "daylight-show").property("checked", config.daylight.show).on("change", apply);col.append("br");
     
   //Show planets
