@@ -1464,7 +1464,7 @@ var settings = {
   geopos: null,       // optional initial geographic position [lat,lon] in degrees, overrides center
   follow: "zenith",   // on which coordinates to center the map, default: zenith, if location enabled, otherwise center
   orientationfixed: true,  // Keep orientation angle the same as center[2]
-  zoomlevel: null,    // initial zoom level 0...zoomextend; 0|null = default, 1 = 100%, 0 < x <= zoomextend
+  zoomlevel: 0.88,    // initial zoom level 0...zoomextend; 0|null = default, 1 = 100%, 0 < x <= zoomextend
   zoomextend: 0,     // maximum zoom level
   adaptable: true,    // Sizes are increased with higher zoom-levels
   interactive: true,  // Enable zooming and rotation with mousewheel and dragging
@@ -1546,7 +1546,7 @@ var settings = {
     boundStyle: { stroke: "#ccff00", width: 1, opacity: 0.8, dash: [2, 6] }
   },
   mw: {
-    show: true,    // Show Milky Way as filled polygons 
+    show: false,    // Show Milky Way as filled polygons 
     style: { fill: "#ffffff", opacity: "0.15" } // style for each MW-layer (5 on top of each other)
   },
   lines: {
@@ -2425,8 +2425,8 @@ function form(cfg) {
       col.append("input").attr("type", "checkbox").attr("id", "stars-" + fld).property("checked", config.stars[fld]).on("change", apply);
     } else if (keys.length === 1) {
       //Simple field
-    col.append("label").attr("for", "stars-" + fld).html(" " + names[fld][keys[0]]);
-      col.append("input").attr("type", "checkbox").attr("id", "stars-" + fld).property("checked", config.stars[fld]).on("change", apply);
+    //col.append("label").attr("for", "stars-" + fld).html(" " + names[fld][keys[0]]);
+      //col.append("input").attr("type", "checkbox").attr("id", "stars-" + fld).property("checked", config.stars[fld]).on("change", apply);
     }    
     col.append("label").attr("for", "stars-" + fld + "Limit").html("ate mag");
     col.append("input").attr("type", "number").attr("id", "stars-" + fld + "Limit").attr("title", "Star name display limit (magnitude)").attr("value", config.stars[fld + "Limit"]).attr("max", "6").attr("min", "-1").attr("step", "0.1").on("change", apply);
@@ -4400,7 +4400,7 @@ function saveSVG(fname) {
     circle = d3.geo.circle().angle([179.95]).origin(center);
   }
 
-  svg.attr("width", m.width).attr("height", m.height);
+  svg.attr("viewBox", " 0 0 850.39 1133.86 " + (m.width) + " " + (m.height));
   // .attr("viewBox", " 0 0 " + (m.width) + " " + (m.height));
 
   var background = svg.append('g'),
@@ -4533,15 +4533,15 @@ function saveSVG(fname) {
   }
 
   // Map border
-  q.defer(function(callback) {
-    var outline = circle ? circle : graticule.outline;
-    objects.append("path")
-     .datum(outline)
-     .attr("class", "outline")
-     .style({"fill": "none", "stroke": cfg.background.stroke, "stroke-width": cfg.background.width, "stroke-opacity": 1, "stroke-dasharray": "none" })
-     .attr("d", map);
-    callback(null);
-  });  
+  //q.defer(function(callback) {
+   // var outline = circle ? circle : graticule.outline;
+  //  objects.append("path")
+   //  .datum(outline)
+   //  .attr("class", "outline")
+    // .style({"fill": "none", "stroke": "none" })
+    // .attr("d", map);
+   // callback(null);
+ // });  
   
   //Constellation nemes or designation
   if (cfg.constellations.names) { 
