@@ -1546,7 +1546,7 @@ var settings = {
     boundStyle: { stroke: "#ccff00", width: 1, opacity: 0.8, dash: [2, 6] }
   },
   mw: {
-    show: false,    // Show Milky Way as filled polygons 
+    show: true,    // Show Milky Way as filled polygons 
     style: { fill: "#ffffff", opacity: "0.15" } // style for each MW-layer (5 on top of each other)
   },
   lines: {
