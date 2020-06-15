@@ -1546,7 +1546,7 @@ var settings = {
     boundStyle: { stroke: "#ccff00", width: 1, opacity: 0.8, dash: [2, 6] }
   },
   mw: {
-    show: false,    // Show Milky Way as filled polygons 
+    show: true,    // Show Milky Way as filled polygons 
     style: { fill: "#ffffff", opacity: "0.15" } // style for each MW-layer (5 on top of each other)
   },
   lines: {
@@ -4400,7 +4400,7 @@ function saveSVG(fname) {
     circle = d3.geo.circle().angle([179.95]).origin(center);
   }
 
-  svg.attr("viewBox", " 0 0 850.39 1133.86 " + (m.width) + " " + (m.height));
+  svg.attr("viewBox", " 0 0 567.93 851.39 " + (m.width) + " " + (m.height));
   // .attr("viewBox", " 0 0 " + (m.width) + " " + (m.height));
 
   var background = svg.append('g'),
