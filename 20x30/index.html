@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <title>AstroViewer</title>
+  <script type="text/javascript" src="lib/d3.min.js"></script>
+  <script type="text/javascript" src="lib/d3.geo.projection.js"></script>
+  <script type="text/javascript" src="celestial.js"></script>
+  <link rel="stylesheet" href="css/celestial.css">
+<input type="button" href="20x30/index.html">
+</head>
+<body>
+
+  
+<div id="grad1"></div>	
+<div style="overflow:visible;"><div id="celestial-map"></div></div>
+
+
+  <script type="text/javascript">
+
+Celestial.display({
+  form: true,
+  formFields: {download: true},
+  datapath: "data/",
+  stars: {propername: true}
+});
+
+  </script>
+
+
+  <footer id="d3-celestial-footer">
+    <p>Leonardo Pires - 2020</p>
+	  
+  </footer>
+</body>
+</html>
