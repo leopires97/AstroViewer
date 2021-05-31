@@ -11,8 +11,26 @@
   <button id="botaoTamanho" type="submit" class="btn btn-primary" onclick="location.href='20x30/index.html';">Versão 20x30cm</button>
 </head>
 <body>	
+  <div class="container">
+    <div class="header">
+      <h2 class="nome">Criação Mapa</h2>
+      <img src="images/LTech.png" id="logo01" class="logo">
+    </div>
+  </div>
+  <div class="jumbotron">
+    <form id="formulario">
+      <div id="grad1"></div>	
+      <div style="overflow:visible;"><div id="celestial-map"></div></div>
+      <script type="text/javascript">
+        Celestial.display({
+          form: true,
+          formFields: {download: true},
+          datapath: "data/",
+          stars: {propername: true}
+        });
+      </script>
+    </form>
+  </div>
 
-  <div id="grad1"></div>	
-  <div style="overflow:visible;"><div id="celestial-map"></div></div>
 </body>
 </html>
