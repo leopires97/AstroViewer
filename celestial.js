@@ -1471,7 +1471,7 @@ var settings = {
   form: false,        // Display settings form
   location: false,    // Display location settings, deprecated, use formFields
   // Set visiblity for each group of fields of the form
-  formFields: {"location": true, "general": true, "stars": true, "dsos": true, "constellations": true, "lines": true, "other": true, download: false},
+  formFields: {"location": true, "general": false, "stars": false, "dsos": false, "constellations": true, "lines": true, "other": true, download: false},
   advanced: true,     // Display fewer form fields if false
   daterange: [],      // Calender date range; null: displaydate-+10; [n<100]: displaydate-+n; [yr]: yr-+10; 
                       // [yr, n<100]: [yr-n, yr+n]; [yr0, yr1]
