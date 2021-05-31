@@ -4,7 +4,22 @@ background: -moz-linear-gradient(top,  rgba(245,246,246,1) 0%, rgba(219,220,226,
 background: -webkit-linear-gradient(top,  rgba(245,246,246,1) 0%,rgba(219,220,226,1) 21%,rgba(184,186,198,1) 49%,rgba(221,223,227,1) 80%,rgba(245,246,246,1) 100%);
 background: linear-gradient(to bottom,  rgba(245,246,246,1) 0%,rgba(219,220,226,1) 21%,rgba(184,186,198,1) 49%,rgba(221,223,227,1) 80%,rgba(245,246,246,1) 100%); 
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f6f6', endColorstr='#f5f6f6',GradientType=0 ); /* IE6-9 */
-
+}
+.logo {
+  width: 40%;
+  float: right;
+  margin-top: 20px;
+}
+.nome {
+  font-size: 40pt;
+  float:left;
+  margin-top: 20px;
+}
+#botaoTamanho {
+  float:  right;
+  position:absolute;
+  right: 0;
+  bottom: 0;
 }
 #celestial-map { width: 870px; height: auto;  padding: 0; display: inline-block; position: relative; float: left;}
 #celestial-map { width: 870px; height: auto;  padding: 0; display: inline-block; position: relative; float: left;}
