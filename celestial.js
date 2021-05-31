@@ -3160,7 +3160,7 @@ function geo(cfg) {
   col.append("input").attr("type", "button").attr("value", "Now").attr("id", "now").on("click", now);
   //Horizon marker
   col.append("br");
-  col.append("label").attr("title", "Show horizon marker").attr("for", "horizon-show").html(" Marcar Horizonte");
+  col.append("label").attr("title", "Show horizon marker").attr("for", "horizon-show").html(" Marcar Horizonte").isVisible == false;
   col.append("input").attr("type", "checkbox").attr("id", "horizon-show").property("checked", config.horizon.show).on("change", apply);    
   //Daylight
   col.append("label").attr("title", "Show daylight").attr("for", "daylight-show").html("Ceu Luz do Dia");
