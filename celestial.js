@@ -1471,7 +1471,7 @@ var settings = {
   form: false,        // Display settings form
   location: false,    // Display location settings, deprecated, use formFields
   // Set visiblity for each group of fields of the form
-  formFields: {"location": true, "general": false, "stars": false, "dsos": false, "constellations": true, "lines": true, "other": true, download: false},
+  formFields: {"location": true, "general": false, "stars": false, "dsos": false, "constellations": false, "lines": false, "other": false, download: true},
   advanced: true,     // Display fewer form fields if false
   daterange: [],      // Calender date range; null: displaydate-+10; [n<100]: displaydate-+n; [yr]: yr-+10; 
                       // [yr, n<100]: [yr-n, yr+n]; [yr0, yr1]
@@ -5087,7 +5087,7 @@ function saveSVG(fname) {
     var blob = new Blob([svg.node().outerHTML], {type:"image/svg+xml;charset=utf-8"});
     
     var a = d3.select("body").append("a").node(); 
-    a.download = fname || "d3-celestial.svg";
+    a.download = fname || "LTech.svg";
     a.rel = "noopener";
     a.href = URL.createObjectURL(blob);
     a.click();
