@@ -3158,9 +3158,9 @@ function geo(cfg) {
   });
   //Now -button sets current time & date of device  
   col.append("input").attr("type", "button").attr("value", "Now").attr("id", "now").on("click", now);
-  //Horizon marker
+  /*//Horizon marker
   col.append("br");
-  col.append("label").attr("title", "Show horizon marker").attr("for", "horizon-show").html(" Marcar Horizonte").isVisible == false;
+  col.append("label").attr("title", "Show horizon marker").attr("for", "horizon-show").html(" Marcar Horizonte");
   col.append("input").attr("type", "checkbox").attr("id", "horizon-show").property("checked", config.horizon.show).on("change", apply);    
   //Daylight
   col.append("label").attr("title", "Show daylight").attr("for", "daylight-show").html("Ceu Luz do Dia");
@@ -3202,7 +3202,7 @@ function geo(cfg) {
  
   enable($("planets-show"));
   showAdvanced(config.advanced);
-  
+  */
 
   d3.select(document).on("mousedown", function () { 
     if (!hasParent(d3.event.target, "celestial-date") && dtpick.isVisible()) dtpick.hide(); 
