@@ -1471,7 +1471,7 @@ var settings = {
   form: false,        // Display settings form
   location: false,    // Display location settings, deprecated, use formFields
   // Set visiblity for each group of fields of the form
-  formFields: {"location": true, "general": false, "stars": false, "dsos": false, "constellations": false, "lines": false, "other": false, download: true},
+  formFields: {"location": true, "general": true, "stars": true, "dsos": true, "constellations": true, "lines": true, "other": true, download: false},
   advanced: true,     // Display fewer form fields if false
   daterange: [],      // Calender date range; null: displaydate-+10; [n<100]: displaydate-+n; [yr]: yr-+10; 
                       // [yr, n<100]: [yr-n, yr+n]; [yr0, yr1]
@@ -2689,7 +2689,7 @@ function form(cfg) {
     
   function getFilename(ext) {
     var dateFormat = d3.time.format("%Y%m%dT%H%M%S%Z"),
-        filename = "LTECH",
+        filename = "d3-celestial",
         dt = Celestial.date();
     if (dt) filename += dateFormat(dt);
     return filename + ext;
@@ -3158,7 +3158,7 @@ function geo(cfg) {
   });
   //Now -button sets current time & date of device  
   col.append("input").attr("type", "button").attr("value", "Now").attr("id", "now").on("click", now);
-  /*//Horizon marker
+  //Horizon marker
   col.append("br");
   col.append("label").attr("title", "Show horizon marker").attr("for", "horizon-show").html(" Marcar Horizonte");
   col.append("input").attr("type", "checkbox").attr("id", "horizon-show").property("checked", config.horizon.show).on("change", apply);    
@@ -3202,7 +3202,7 @@ function geo(cfg) {
  
   enable($("planets-show"));
   showAdvanced(config.advanced);
-  */
+  
 
   d3.select(document).on("mousedown", function () { 
     if (!hasParent(d3.event.target, "celestial-date") && dtpick.isVisible()) dtpick.hide(); 
@@ -4400,7 +4400,7 @@ function saveSVG(fname) {
     circle = d3.geo.circle().angle([179.95]).origin(center);
   }
 
-  svg.attr("viewBox", " 0 0 850.39 1133.86 " + (m.width) + " " + (m.height));
+  svg.attr("viewBox", " 0 0 567.93 851.39 " + (m.width) + " " + (m.height));
   // .attr("viewBox", " 0 0 " + (m.width) + " " + (m.height));
 
   var background = svg.append('g'),
@@ -5087,7 +5087,7 @@ function saveSVG(fname) {
     var blob = new Blob([svg.node().outerHTML], {type:"image/svg+xml;charset=utf-8"});
     
     var a = d3.select("body").append("a").node(); 
-    a.download = fname || "LTech.svg";
+    a.download = fname || "d3-celestial.svg";
     a.rel = "noopener";
     a.href = URL.createObjectURL(blob);
     a.click();
