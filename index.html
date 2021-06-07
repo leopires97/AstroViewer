@@ -11,26 +11,34 @@
   <link rel="stylesheet" type="text/css" href="css/aditional.css">
   <button id="botaoTamanho" type="submit" class="btn btn-primary" onclick="location.href='20x30/index.html';">Versão 20x30cm</button>
 </head>
-<body>	
+<body>
   <div class="container">
-    <div class="header">
-      <img src="images/LTech.png" id="logo01" class="logo"> 
+    <div class="jumbotron">
+        <img src="images/LTech.png" id="logo01" style="width: 250px;"> 
     </div>
     <div class="jumbotron">
-    <form id="formulario">
-      <div id="grad1"></div>	
       <div id="celestial-map"></div>
       <div id="celestial-form"></div>
-      <script type="text/javascript">
-        Celestial.display({
-          form: true,
-          formFields: {download: true},
-          datapath: "data/",
-          stars: {propername: true},
-        });
-      </script>
-    </form> 
     </div>
   </div>
+  <script type="text/javascript">
+    Celestial.display({
+      form: true,
+      formFields: {download: true},
+      datapath: "data/",
+      stars: {propername: true},
+    });
+  </script>
+ <!-- <div class="container">
+
+    <div class="jumbotron">
+    <form id="formulario">
+      	
+      <div id="celestial-map"></div>
+
+
+    </form> 
+    </div>
+  </div>  -->
 </body>
 </html>
