@@ -17,9 +17,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f6f6', end
 }
 #botaoTamanho {
   float:  right;
-  position:absolute;
-  right: 0;
-  bottom: 0;
+  position: absolute;
+  height: 60px;
+  right: 50px;
+  bottom: -5px;
 }
 
 #celestial-map { width: 870px; height: 400px;  padding: 0; display: inline-block; position: relative; float: left;}
@@ -30,7 +31,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f6f6', end
 #d3-celestial-footer a { text-decoration:none; color:#99f; }
 #Botao20x30 {position: static; float: top; width: 140px; height: 50px; }
 /* Form */
-#celestial-form { font:12pt/1 'Arial Unicode MS', Arial, Helvetica, sans-serif; display: inline-block; position: absolute;margin-top: 300px; margin-right: 30px}
+#celestial-form { font:12pt/1 'Arial Unicode MS', Arial, Helvetica, sans-serif;position: absolute;left: 50%;right: 25%;}
 #error { position:absolute; min-width:100px; height:auto; padding: 2px 4px; color:#f00; background:#fff; border:2px solid #f00; border-radius:3px; font-weight:normal; display:block; top:-9999px; left:-9999px; opacity:0; transition:opacity 1s linear; }
 
 #celestial-form .col { border-top: 1px dotted #000; padding: 4px 6px; margin:0  4px; clear:both; }
@@ -39,7 +40,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f6f6', end
 #celestial-form #location,
 #celestial-form #stars,
 #celestial-form #dsos,
-#celestial-form #constellations,
+#celestial-form #constellations,  
 #celestial-form #lines,
 #celestial-form #other,
 #celestial-form #download { display: block }
