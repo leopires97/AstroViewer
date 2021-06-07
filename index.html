@@ -19,7 +19,12 @@
       <div id="grad1"></div>	
       <div id="celestial-map"></div>
       <script type="text/javascript">
-        celestial.display({form:true, formfields: {download:true}});
+        Celestial.display({
+          form: true,
+          formFields: {download: true},
+          datapath: "data/",
+          stars: {propername: true},
+        });
       </script>
     </form> 
   </div>
