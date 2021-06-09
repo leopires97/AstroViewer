@@ -10,10 +10,10 @@
   margin-top: 20px;
 }
 
-#celestial-map { width: 870px; height: 400px;  padding: 0; display: inline-block; position: relative; float: left;}
-#celestial-map { width: 870px; height: 400px;  padding: 0; display: inline-block; position: relative; float: left;}
-#celestial-map canvas { display: inline-block; position:absolute; z-index:0; cursor:hand; cursor:grab; cursor:-moz-grab; cursor:-webkit-grab; }
-#celestial-map canvas:active { cursor:move; cursor: grabbing;  cursor: -moz-grabbing; cursor: -webkit-grabbing; }
+#celestial-map { width: 870px; height: 400px;  padding: 0; display: inline-block; position: relative; opacity: 0%;}
+#celestial-map { width: 870px; height: 400px;  padding: 0; display: inline-block; position: relative; opacity: 0%;}
+#celestial-map canvas { display: inline-block; position:absolute; z-index:0; cursor:hand; cursor:grab; cursor:-moz-grab; cursor:-webkit-grab; opacity: 0%;}
+#celestial-map canvas:active { cursor:move; cursor: grabbing;  cursor: -moz-grabbing; cursor: -webkit-grabbing; opacity: 0%;}
 #d3-celestial-footer { position: absolute; float: left; text-align:center; color:#666; font:10pt/1 'Arial Unicode MS', Arial, Helvetica, sans-serif; }
 #d3-celestial-footer a { text-decoration:none; color:#99f; }
 #Botao20x30 {position: static; float: top; width: 140px; height: 50px; }
