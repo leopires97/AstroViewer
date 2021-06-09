@@ -2616,7 +2616,7 @@ function form(cfg) {
   col = frm.append("div").attr("class", "col").attr("id", "download");
   col.append("label").attr("class", "header").html("Baixar");
 
-  col.append("input").attr("type", "button").attr("id", "download-png").attr("value", "PNG Image").on("click", function() {
+  col.append("input").attr("type", "button").attr("id", "download-png").attr("value", "Baixar PNG").on("click", function() {
     var a = d3.select("body").append("a").node(), 
         canvas = document.querySelector("#" + config.container + ' canvas');
     a.download = getFilename(".png");
@@ -2626,7 +2626,7 @@ function form(cfg) {
     d3.select(a).remove();
   });
 
-  col.append("input").attr("type", "button").attr("id", "download-svg").attr("value", "SVG File").on("click", function() {
+  col.append("input").attr("type", "button").attr("id", "download-svg").attr("value", "Baixar SVG").on("click", function() {
     saveSVG(getFilename(".svg")); 
     return false;
   });
@@ -3136,7 +3136,7 @@ function geo(cfg) {
   col.append("span").html("\u00b0");
   //Here-button if supported
   if ("geolocation" in navigator) {
-    col.append("input").attr("type", "button").attr("value", "Here").attr("id", "here").on("click", here);
+    col.append("input").attr("type", "button").attr("value", "Local Atual").attr("id", "here").on("click", here);
   }
   //Datetime field with dtpicker-button
   col.append("label").attr("title", "Local date/time").attr("for", "datetime").html(" Data e Hora");
@@ -3157,7 +3157,7 @@ function geo(cfg) {
     go(); 
   });
   //Now -button sets current time & date of device  
-  col.append("input").attr("type", "button").attr("value", "Now").attr("id", "now").on("click", now);
+  col.append("input").attr("type", "button").attr("value", "Hoje").attr("id", "now").on("click", now);
   /*//Horizon marker
   col.append("br");
   col.append("label").attr("title", "Show horizon marker").attr("for", "horizon-show").html(" Marcar Horizonte");

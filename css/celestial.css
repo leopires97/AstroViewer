@@ -41,10 +41,10 @@ input[type="number"]::-webkit-outer-spin-button { height: auto; }
 #celestial-form input[type='text'] { width:194px; height:18px; text-align:left; padding-left:2px; }
 #celestial-form input[type='checkbox'] { vertical-align: -2px; }
 #celestial-form input[type='color'] { width:48px; vertical-align: -3px; height:22px;  background:#fff; }
-#celestial-form #datepick { position:relative; display:inline-block;*/ _vertical-align:-8px; top:7px; left:-31px; width:40px; height:24px; border:0px none; border-left:1px solid #ccc; background-color: #f7f7f7; background-image: url('images/dtpick.png'); background-position: -45px 1px; cursor:default; }
+#celestial-form #datepick { position:relative; display:inline-block; _vertical-align:-8px; top:7px; left: -65px; right: 20px; width:80px; height:24px; border:0px none; border-left:1px solid #ccc; background-color: #f7f7f7; background-image: url('images/dtpick.png'); background-position: -45px 1px; cursor:default; }
 #celestial-form #datepick.active { background-position: -69px 1px; }
-#celestial-form #datetime { cursor:default; } 
-#celestial-form input#now { position:relative; left:-24px; }
+#celestial-form #datetime { cursor:default; width: 220px; } 
+#celestial-form input#now { position:relative; left:-24px;}
 #celestial-form #constellation { } 
 #celestial-form select option { color:#000; } 
 #celestial-form select option[value='---'] { color:#ccc; } 
@@ -72,7 +72,7 @@ input[type="number"]::-webkit-outer-spin-button { height: auto; }
 #celestial-form input#here, 
 #celestial-form input#show, 
 #celestial-form input#download-png,
-#celestial-form input#download-svg  { border: 1px solid #000; border-radius:3px; height:24px; }
+#celestial-form input#download-svg  { border: 1px solid #000; border-radius:3px; height:24px; width: 100px;}
 
 #celestial-form label { margin:0 2px 0 8px; }
 #celestial-form label.header { font-weight:bold; }
