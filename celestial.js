@@ -2631,6 +2631,21 @@ function form(cfg) {
     return false;
   });
 
+  col.append("input").attr("type", "button").attr("id", "download-png").attr("value", "Baixar PNG").on("click", function() {
+    var a = d3.select("body").append("a").node(), 
+        canvas = document.querySelector("#" + config.container + ' canvas');
+    a.download = getFilename(".png");
+    a.rel = "noopener";
+    a.href = canvas.toDataURL('image/png').replace('image/png', 'image/octet-stream');
+    a.click();
+    d3.select(a).remove();
+  });
+
+  col.append("input").attr("type", "button").attr("id", "download-svg").attr("value", "Baixar SVG").on("click", function() {
+    saveSVG(getFilename(".svg")); 
+    return false;
+  });
+
   setLimits();
   setUnit(config.transform);
   setVisibility(cfg);
