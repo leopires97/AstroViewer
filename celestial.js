@@ -2616,7 +2616,7 @@ function form(cfg) {
   col = frm.append("div").attr("class", "col").attr("id", "download");
   col.append("label").attr("class", "header").html("Baixar");
 
-  col.append("input").attr("type", "button").attr("id", "download-png").attr("value", "Baixar PNG").on("click", function() {
+  col.append("input").attr("type", "button").attr("id", "download-png").attr("value", "Baixar PNG 20x30cm").on("click", function() {
     var a = d3.select("body").append("a").node(), 
         canvas = document.querySelector("#" + config.container + ' canvas');
     a.download = getFilename(".png");
@@ -2626,12 +2626,12 @@ function form(cfg) {
     d3.select(a).remove();
   });
 
-  col.append("input").attr("type", "button").attr("id", "download-svg").attr("value", "Baixar SVG").on("click", function() {
+  col.append("input").attr("type", "button").attr("id", "download-svg").attr("value", "Baixar SVG 20x30cm").on("click", function() {
     saveSVG(getFilename(".svg")); 
     return false;
   });
 
-  col.append("input").attr("type", "button").attr("id", "download-png").attr("value", "Baixar PNG").on("click", function() {
+  col.append("input").attr("type", "button").attr("id", "download-png").attr("value", "Baixar PNG 30x40cm").on("click", function() {
     var a = d3.select("body").append("a").node(), 
         canvas = document.querySelector("#" + config.container + ' canvas');
     a.download = getFilename(".png");
@@ -2641,7 +2641,7 @@ function form(cfg) {
     d3.select(a).remove();
   });
 
-  col.append("input").attr("type", "button").attr("id", "download-svg").attr("value", "Baixar SVG").on("click", function() {
+  col.append("input").attr("type", "button").attr("id", "download-svg").attr("value", "Baixar SVG 30x40cm").on("click", function() {
     saveSVG(getFilename(".svg")); 
     return false;
   });
